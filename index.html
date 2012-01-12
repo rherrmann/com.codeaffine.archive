@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="keywords" content="eclipse plugin zip archive" />
+  <meta name="description" 
+    content="Archive Utilities extend the Eclipse IDE to view structure and content of and extract zip files" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Archive Utilities for Eclipse</title>
+  <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+
+<h1>Archive Utilities for Eclipse</h1>
+<p>
+  The Archive Utilities extend the Eclipse IDE to view the structure and content and extract 
+  zip archive files within the workspace.
+</p>
+
+<h2>Features</h2>
+<p>
+  Files with zip content can be extracted entirely or partially to locations in the workspace or 
+  file system.
+</p>  
+<p>
+  In the 
+  <a href="http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Freference%2Fref-27.htm">
+    Project Explorer</a>, 
+  zip files can be expanded just like folders to reveal their 
+  content. The content of each file within the archive can be viewed in an editor.
+</p>
+
+<h2>Requirements</h2>
+<p>
+  Eclipse 3.7 (Indigo) or newer.
+</p>
+
+<h2>Installation</h2>
+<p>
+  Install from this Eclipse software repository: 
+  <span class="link">http://rherrmann.github.com/zix/repository</span>
+</p>
+<p>
+  From the Eclipse main menu, choose <em>Help -> Install New Software...</em> In the upcoming 
+  dialog, enter the above URL in the <em>Work with</em> field.
+</p>
+
+<h2>Usage</h2>
+<p>
+  For files with zip content, an <em>Extract...</em> action is added to all places that work 
+  with resources. The <em>Package Explorer</em> for example shows an <em>Extract...</em> menu 
+  item if the file is an archive.
+</p>
+<p>
+  In the <em>Project Explorer</em> view, zip files can be expanded just like folders to reveal 
+  their content. Each file within the archive can be viewed in an editor. Right-click the file 
+  to show and choose <em>Open</em>.
+</p>
+<p>
+  To extract items from the archive, select the items to be extracted and choose 
+  <em>Extract...</em> from the context menu. The upcoming dialog asks for a destination location.
+</p>
+
+<h2>Known Issues and Future Ideas</h2>
+<p>
+  As the version number 0.1 suggests, there are still some open ends...
+</p>
+<ul>
+  <li>Enable for use with Eclipse 3.6</li>
+  <li>Key bindings for <em>Open</em> and <em>Extract</em></li>
+  <li><em>Open with...</em> action</li>
+  <li>Nested archive files</li>
+  <li>Fix DnD to the editor area. It fails non-deterministic (needs investigation).</li>
+  <li>Support other archive/compression formats (tar.gz, what else?)</li>
+  <li>Expanding an archive in the _Project Explorer_ is currently done on the UI thread. This 
+    may lead to UI freezes when expanding very large archive on a slow machine.</li>
+</ul>
+<p>
+  If you have suggestions for new features or find a bug, please file an
+  <a href="https://github.com/rherrmann/zix/issues">issue</a>.
+</p>
+
+<h2>License</h2>
+<p>
+  The code is published under the terms of the 
+  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0">
+    Creative Commons Attribution Non-Commercial Share-Alike</a>
+  license.    
+</p>
+
+</body>
+
+</html>
