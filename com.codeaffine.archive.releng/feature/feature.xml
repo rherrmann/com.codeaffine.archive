@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.codeaffine.archive.feature"
+      label="Archive Utilities Feature"
+      version="0.1.0.qualifier"
+      provider-name="Codeaffine.com"
+      plugin="com.codeaffine.archive.ui">
+
+   <description url="http://rherrmann.github.com/zix/index.html">
+This feature is an extensions to the Eclipse IDE to show the structure and content and to extract 
+archive files within the workspace
+   </description>
+
+   <copyright>
+Copyright (C) 2012, Rüdiger Herrmann and others. 
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Creative Commons Attribution Non-Commercial Share-Alike
+license which accompanies this distribution, and is available at
+http://creativecommons.org/licenses/by-nc-sa/3.0
+
+Contributors:
+   Rüdiger Herrmann - initial implementation
+   </copyright>
+
+   <license url="license.html">
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.contenttype" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.core.runtime" version="3.7.0" match="compatible"/>
+      <import plugin="org.eclipse.core.resources" version="3.7.0" match="compatible"/>
+      <import plugin="org.eclipse.ui" version="3.7.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.ide" version="3.7.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.navigator" version="3.5.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.navigator.resources" version="3.4.0" match="compatible"/>
+   </requires>
+
+   <plugin
+         id="com.codeaffine.archive.contenttype"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.codeaffine.archive.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <!-- source bundles -->
+   <plugin
+         id="com.codeaffine.archive.contenttype.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.codeaffine.archive.ui.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

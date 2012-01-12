@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <navigatorContent
+            activeByDefault="true"
+            contentProvider="com.codeaffine.archive.ui.internal.viewer.ArchiveContentProviderWrapper"
+            icon="$nl$/icons/obj16/extract_extension.png"
+            id="com.codeaffine.archive.ui.internal.ArchiveContent"
+            labelProvider="com.codeaffine.archive.ui.internal.viewer.ArchiveLabelProvider"
+            name="Archive Content"
+            priority="normal">
+        <triggerPoints>
+          <or>
+            <instanceof value="org.eclipse.core.resources.IFile" />
+            <instanceof
+                  value="com.codeaffine.archive.ui.internal.model.ArchiveEntry">
+            </instanceof>
+          </or>
+        </triggerPoints>
+        <possibleChildren>
+          <or>
+            <instanceof
+                  value="com.codeaffine.archive.ui.internal.model.ArchiveEntry">
+            </instanceof>
+          </or>
+        </possibleChildren>
+        <commonSorter
+              class="com.codeaffine.archive.ui.internal.viewer.ArchiveEntrySorter"
+              id="com.codeaffine.archive.ui.internal.ArchiveEntrySorter">
+        </commonSorter>
+        <actionProvider
+              class="com.codeaffine.archive.ui.internal.editor.OpenActionProvider"
+              id="com.codeaffine.archive.ui.internal.editor.ActionProvider"
+              overrides="org.eclipse.ui.navigator.resources.OpenActions">
+        </actionProvider>
+        <actionProvider
+              class="com.codeaffine.archive.ui.internal.extract.ExtractEntryActionProvider"
+              id="com.codeaffine.archive.ui.internal.extract.ExtractActionProvider">
+        </actionProvider>
+      </navigatorContent>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="com.codeaffine.archive.ui.internal.ArchiveContent">
+            </contentExtension>
+         </includes>
+      </viewerContentBinding>
+      <dragAssistant
+            class="com.codeaffine.archive.ui.internal.editor.ArchiveDragAdapterAssistant"
+            viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+      </dragAssistant>
+   </extension>
+   <extension
+         point="org.eclipse.ui.elementFactories">
+      <factory
+            class="com.codeaffine.archive.ui.internal.editor.PersistableEditorInputFactory"
+            id="com.codeaffine.archive.ui.internal.editor.PersistableEditorInputFactory">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="com.codeaffine.archive.ui.objectContribution1"
+            objectClass="org.eclipse.core.resources.IResource">
+         <visibility>
+            <objectState
+                  name="contentTypeId"
+                  value="com.codeaffine.archive.contenttype.ZipContentType">
+            </objectState>
+         </visibility>
+         <action
+               class="com.codeaffine.archive.ui.internal.extract.ExtractFileAction"
+               enablesFor="1"
+               icon="$nl$/icons/elcl16/extract_action.png"
+               id="com.codeaffine.archive.ui.internal.extract.ExtractFileAction"
+               label="E&amp;xtract..."
+               menubarPath="additions">
+         </action>
+      </objectContribution>
+   </extension>
+</plugin>

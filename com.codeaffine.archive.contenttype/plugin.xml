@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            describer="com.codeaffine.archive.contenttype.internal.ZipContentDescriber"
+            id="com.codeaffine.archive.contenttype.ZipContentType"
+            name="Zip Archive"
+            priority="normal">
+      </content-type>
+      <file-association
+            content-type="com.codeaffine.archive.contenttype.ZipContentType"
+            file-extensions="zip">
+      </file-association>
+   </extension>
+
+</plugin>
