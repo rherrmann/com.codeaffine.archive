@@ -3,17 +3,15 @@ package com.codeaffine.archive.ui.internal.editor;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.dnd.DragSourceEvent;
 import org.eclipse.swt.dnd.Transfer;
-import org.eclipse.ui.internal.navigator.Policy;
+//import org.eclipse.ui.internal.navigator.Policy;
 import org.eclipse.ui.navigator.CommonDragAdapterAssistant;
-import org.eclipse.ui.part.EditorInputTransfer;
-import org.eclipse.ui.part.ResourceTransfer;
 
 
 public class ArchiveDragAdapterAssistant extends CommonDragAdapterAssistant {
 
-  public ArchiveDragAdapterAssistant() {
-    Policy.DEBUG_DND = true;
-  }
+//  public ArchiveDragAdapterAssistant() {
+//    Policy.DEBUG_DND = true;
+//  }
 
   @Override
   public Transfer[] getSupportedTransferTypes() {
