@@ -5,6 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import com.codeaffine.archive.contenttype.ContentTypesTest;
+import com.codeaffine.archive.contenttype.internal.ExtensionTest;
 import com.codeaffine.archive.contenttype.internal.ZipContentDescriberTest;
 
 
@@ -12,6 +13,7 @@ import com.codeaffine.archive.contenttype.internal.ZipContentDescriberTest;
 @SuiteClasses({
   ContentTypesTest.class,
   ZipContentDescriberTest.class,
+  ExtensionTest.class
 })
 public class AllContentTypeTests {
 }

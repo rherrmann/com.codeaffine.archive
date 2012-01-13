@@ -11,7 +11,7 @@
       </content-type>
       <file-association
             content-type="com.codeaffine.archive.contenttype.ZipContentType"
-            file-extensions="zip">
+            file-extensions="zip,jar,war,ear">
       </file-association>
    </extension>
 
