@@ -6,13 +6,14 @@
       provider-name="Codeaffine.com"
       plugin="com.codeaffine.archive.ui">
 
-   <description url="http://rherrmann.github.com/zix/index.html">
-This feature is an extensions to the Eclipse IDE to show the structure and content and to extract 
-archive files within the workspace
+   <description url="http://rherrmann.github.com/archive/index.html">
+      This feature is an extensions to the Eclipse IDE to show the
+structure and content and to extract archive files (zip, jar,
+war, etc.) within the workspace.
    </description>
 
    <copyright>
-Copyright (C) 2012, Rüdiger Herrmann and others. 
+      Copyright (C) 2012, Rüdiger Herrmann and others. 
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Creative Commons Attribution Non-Commercial Share-Alike
 license which accompanies this distribution, and is available at
@@ -23,6 +24,7 @@ Contributors:
    </copyright>
 
    <license url="license.html">
+      
    </license>
 
    <requires>
@@ -49,7 +51,6 @@ Contributors:
          version="0.0.0"
          unpack="false"/>
 
-   <!-- source bundles -->
    <plugin
          id="com.codeaffine.archive.contenttype.source"
          download-size="0"
