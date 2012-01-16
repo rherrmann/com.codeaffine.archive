@@ -48,7 +48,7 @@
     <repository>
       <id>mockito-1.8.4</id>
       <layout>p2</layout>
-      <url>http://rherrmann.github.com/zix/mockito-1.8.4</url>
+      <url>http://rherrmann.github.com/com.codeaffine.archive/mockito-1.8.4</url>
     </repository>
   </repositories>
 
