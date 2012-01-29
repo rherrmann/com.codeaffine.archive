@@ -7,6 +7,6 @@ Bundle-Vendor: CodeAffine.com
 Eclipse-ExtensibleAPI: true
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.eclipse.core.contenttype;bundle-version="[3.4.0,4.0.0)",
- org.eclipse.core.runtime;bundle-version="[3.7.0,4.0.0)"
+ org.eclipse.core.runtime;bundle-version="[3.6.0,4.0.0)"
 Export-Package: com.codeaffine.archive.contenttype;version="1.0.0.qualifier",
  com.codeaffine.archive.contenttype.internal;version="1.0.0.qualifier";x-internal:=true
