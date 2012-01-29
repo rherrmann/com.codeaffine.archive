@@ -21,3 +21,5 @@ The `com.codeaffine.archive.releng` project contains everything that is necessar
     cd <git-repo>/com.codeaffine.archive.releng
     mvn clean install
 
+## License
+Please see the [user documentation](http://rherrmann.github.com/com.codeaffine.archive/index.html).
