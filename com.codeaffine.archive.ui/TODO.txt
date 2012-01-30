@@ -1,0 +1,15 @@
+* add about/branding/product
+* Enable for use with Eclipse 3.6
+* use images from content-type for zip entries, maybe decorate with a zip hint
+* ensure that reading large archive files does not block UI
+* make the "Open" command the default action (double-click, Return)
+* provide a default editor
+* add "Open with..." menu, that always has a "System default editor" menu item
+  (see OpenWithMenu, PackageExplorerOpenActionProvider)
+* support nested zip files
+* provide key binding (F3) for "Open" command
+* support further zip file extensions (jar? war?)
+* report bug: ResourceDragAdapterAssistant prevents dragging other elements than resources
+* support other archive/compression format than zip (use org.apache.commons.compress?)  
+* run tests in/after build
+* support "Import source from repository..."

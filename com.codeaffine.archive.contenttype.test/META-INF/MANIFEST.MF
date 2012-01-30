@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: com.codeaffine.archive.contenttype.test
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: Codeaffine.com
+Fragment-Host: com.codeaffine.archive.contenttype
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: com.codeaffine.archive.contenttype.test;version="1.0.0.qualifier"
+Import-Package: org.junit;version="[4.8.1,5.0.0)",
+ org.junit.runner;version="[4.8.1,5.0.0)",
+ org.junit.runners;version="[4.8.1,5.0.0)",
+ org.mockito;version="[1.8.4,2.0.0)",
+ org.mockito.stubbing;version="[1.8.4,2.0.0)"

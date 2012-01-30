@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature 
+       url="../features/com.codeaffine.archive.feature_0.1.0.qualifier.jar" 
+       id="com.codeaffine.archive.feature"
+       version="0.1.0.qualifier">
+      <category name="com.codeaffine.archive.category"/>
+   </feature>
+   <category-def name="com.codeaffine.archive.category" label="Archive Utilities"/>
+</site>
