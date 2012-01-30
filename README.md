@@ -19,7 +19,9 @@ The `target` project contains a [target platform](http://help.eclipse.org/indigo
 The `com.codeaffine.archive.releng` project contains everything that is necessary to build the software. The build is based on [Eclipse Tycho](http://www.eclipse.org/tycho). To run the build
 
     cd <git-repo>/com.codeaffine.archive.releng
-    mvn clean install
+    mvn clean install -P <eclipse-platform>
+    
+&lt;eclipse-platform&gt; can be one of `eclipse-3.6`, `eclipse-3.7`, `eclipse-3.8`, `eclipse-4.2`. If you omit the -P (maven profile) command line argument, the default `eclipse-3.7` is taken.
 
 ## License
 Please see the [user documentation](http://rherrmann.github.com/com.codeaffine.archive/index.html).
