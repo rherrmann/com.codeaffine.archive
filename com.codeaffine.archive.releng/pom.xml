@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Copyright (C) 2012, Rüdiger Herrmann and others. 
-  All rights reserved. This program and the accompanying materials
-  are made available under the terms of the Creative Commons Attribution Non-Commercial Share-Alike
-  license which accompanies this distribution, and is available at
-  http://creativecommons.org/licenses/by-nc-sa/3.0
-
-  Contributors:
-     Rüdiger Herrmann - initial implementation
--->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -29,6 +19,58 @@
   <prerequisites>
     <maven>3.0</maven>
   </prerequisites>
+  
+  <profiles>
+    <profile>
+      <id>eclipse-3.6</id>
+      <activation>
+	      <property>
+	        <name>eclipse-platform</name>
+	        <value>3.6</value>
+	      </property>
+      </activation>
+      <properties>
+        <eclipse-platform-url>http://download.eclipse.org/eclipse/updates/3.6</eclipse-platform-url>
+      </properties>
+    </profile>
+    <profile>
+      <id>eclipse-3.7</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+	      <property>
+	        <name>eclipse-platform</name>
+	        <value>3.7</value>
+	      </property>
+      </activation>
+      <properties>
+        <eclipse-platform-url>http://download.eclipse.org/eclipse/updates/3.7</eclipse-platform-url>
+      </properties>
+    </profile>
+    <profile>
+      <id>eclipse-3.8</id>
+      <activation>
+	      <property>
+	        <name>eclipse-platform</name>
+	        <value>3.8</value>
+	      </property>
+      </activation>
+      <properties>
+        <eclipse-platform-url>http://download.eclipse.org/eclipse/updates/3.8milestones</eclipse-platform-url>
+      </properties>
+    </profile>
+    <profile>
+      <id>eclipse-4.2</id>
+      <activation>
+        <property>
+          <name>eclipse-platform</name>
+          <value>4.2</value>
+        </property>
+      </activation>
+      <properties>
+        <eclipse-platform-url>http://download.eclipse.org/eclipse/updates/4.2milestones</eclipse-platform-url>
+      </properties>
+    </profile>
+  </profiles>
 
   <modules>
     <module>feature</module>
@@ -41,9 +83,9 @@
 
   <repositories>
     <repository>
-      <id>eclipse-3.7</id>
+      <id>eclipse-platform</id>
       <layout>p2</layout>
-      <url>http://download.eclipse.org/eclipse/updates/3.7</url>
+      <url>${eclipse-platform-url}</url>
     </repository>
     <repository>
       <id>mockito-1.8.4</id>
@@ -61,7 +103,7 @@
 
   <build>
     <plugins>
-
+        
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-maven-plugin</artifactId>
@@ -102,6 +144,17 @@
           <includes>
             <include>**/*Test.*</include>
           </includes>
+          <!-- Extra bundles, neccessary to run on Eclipse 4.2 -->
+          <dependencies>
+            <dependency>
+              <type>p2-installable-unit</type>
+              <artifactId>org.eclipse.equinox.ds</artifactId>
+            </dependency>
+            <dependency>
+              <type>p2-installable-unit</type>
+              <artifactId>org.eclipse.equinox.event</artifactId>
+            </dependency>
+          </dependencies>
         </configuration>
       </plugin>
 

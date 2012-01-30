@@ -31,10 +31,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
    <requires>
       <import plugin="org.eclipse.core.contenttype" version="3.4.0" match="compatible"/>
-      <import plugin="org.eclipse.core.runtime" version="3.7.0" match="compatible"/>
-      <import plugin="org.eclipse.core.resources" version="3.7.0" match="compatible"/>
-      <import plugin="org.eclipse.ui" version="3.7.0" match="compatible"/>
-      <import plugin="org.eclipse.ui.ide" version="3.7.0" match="compatible"/>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
+      <import plugin="org.eclipse.core.resources" version="3.6.0" match="compatible"/>
+      <import plugin="org.eclipse.ui" version="3.6.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.ide" version="3.6.0" match="compatible"/>
       <import plugin="org.eclipse.ui.navigator" version="3.5.0" match="compatible"/>
       <import plugin="org.eclipse.ui.navigator.resources" version="3.4.0" match="compatible"/>
    </requires>
