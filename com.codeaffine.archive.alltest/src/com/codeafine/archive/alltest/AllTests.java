@@ -15,4 +15,5 @@ import com.codeaffine.archive.ui.test.AllUiTests;
   AllContentTypeTests.class,
 })
 public class AllTests {
+	// no comment
 }
