@@ -5,6 +5,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.StatusDialog;
+import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -12,7 +13,6 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -69,39 +69,6 @@ class ExtractDialog extends StatusDialog {
     super.okPressed();
   }
 
-  private void createDialogContents() {
-    GridLayout layout = new GridLayout( 3, false );
-    parent.setLayout( layout );
-    Label lblDescription = createLabel( "Enter the folder to which the selected items will be extracted" );
-    lblDescription.setLayoutData( new GridData( SWT.LEFT, SWT.TOP, true, false, 2, 1 ) );
-    createFiller();
-    createLabel( "&Location" );
-    txtLocation = new Text( parent, SWT.BORDER );
-    txtLocation.setLayoutData( new GridData( SWT.FILL, SWT.TOP, true, false ) );
-    txtLocation.addModifyListener( new ModifyListener() {
-      public void modifyText( ModifyEvent event ) {
-        updateLocation();
-      }
-    } );
-    Button btnExternalFolder = createButton( "&External Folder..." );
-    btnExternalFolder.addSelectionListener( new SelectionAdapter() {
-      @Override
-      public void widgetSelected( SelectionEvent event ) {
-        browseExternalFolder();
-      }
-    } );
-    createFiller();
-    createFiller();
-    Button btnWorkspace = createButton( "&Workspace..." );
-    btnWorkspace.addSelectionListener( new SelectionAdapter() {
-      @Override
-      public void widgetSelected( SelectionEvent event ) {
-        browseWorkspaceFolder();
-      }
-    } );
-    txtLocation.setFocus();
-  }
-
   @Override
   protected void updateButtonsEnableState( IStatus status ) {
     super.updateButtonsEnableState( status );
@@ -113,9 +80,64 @@ class ExtractDialog extends StatusDialog {
     }
   }
 
-  private Label createLabel( String text ) {
+  private void createDialogContents() {
+    parent.setLayout( GridLayoutFactory.swtDefaults().numColumns( 3 ).margins( 10, 10 ).create() );
+    createDescriptionLabel();
+    createFiller();
+    createLocationLabel();
+    createLocationText();
+    createExternalFolderButton();
+    createFiller();
+    createFiller();
+    createWorkspaceButton();
+    txtLocation.setFocus();
+  }
+
+  private void createDescriptionLabel() {
+    String text = "Enter the folder to which the selected items will be extracted";
+    GridData gridData = new GridData( SWT.LEFT, SWT.TOP, true, false, 2, 1 );
+    createLabel( text, gridData );
+  }
+
+  private void createLocationLabel() {
+    GridData gridData = new GridData( SWT.LEFT, SWT.CENTER, false, false );
+    createLabel( "&Location", gridData );
+  }
+
+  private void createLocationText() {
+    txtLocation = new Text( parent, SWT.BORDER );
+    txtLocation.setLayoutData( new GridData( SWT.FILL, SWT.TOP, true, false ) );
+    txtLocation.addModifyListener( new ModifyListener() {
+      public void modifyText( ModifyEvent event ) {
+        updateLocation();
+      }
+    } );
+  }
+
+  private void createExternalFolderButton() {
+    Button btnExternalFolder = createButton( "&External Folder..." );
+    btnExternalFolder.addSelectionListener( new SelectionAdapter() {
+      @Override
+      public void widgetSelected( SelectionEvent event ) {
+        browseExternalFolder();
+      }
+    } );
+  }
+
+  private void createWorkspaceButton() {
+    Button btnWorkspace = createButton( "&Workspace..." );
+    btnWorkspace.addSelectionListener( new SelectionAdapter() {
+      @Override
+      public void widgetSelected( SelectionEvent event ) {
+        browseWorkspaceFolder();
+      }
+    } );
+  }
+
+  private Label createLabel( String text, GridData layoutData ) {
     Label result = new Label( parent, SWT.NONE );
     result.setText( text );
+    result.setLayoutData( layoutData );
     return result;
   }
 
