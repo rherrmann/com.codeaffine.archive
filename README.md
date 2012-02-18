@@ -16,7 +16,7 @@ The `com.codeaffine.archive.alltest` bundle contains a test suite that reference
 The `target` project contains a [target platform](http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Fconcepts%2Ftarget.htm) definition that should be used for development. 
 
 ### Build
-The `com.codeaffine.archive.releng` project contains everything that is necessary to build the software. The build is based on [Eclipse Tycho](http://www.eclipse.org/tycho). To run the build
+The `com.codeaffine.archive.releng` project contains everything that is necessary to build the software. The build is based on [Eclipse Tycho (version 0.14)](http://www.eclipse.org/tycho). To run the build
 
     cd <git-repo>/com.codeaffine.archive.releng
     mvn clean install -P <eclipse-platform>
