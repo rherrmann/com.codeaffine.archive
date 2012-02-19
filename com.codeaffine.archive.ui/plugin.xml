@@ -33,7 +33,8 @@
         <actionProvider
               class="com.codeaffine.archive.ui.internal.editor.OpenActionProvider"
               id="com.codeaffine.archive.ui.internal.editor.ActionProvider"
-              overrides="org.eclipse.ui.navigator.resources.OpenActions">
+              overrides="org.eclipse.ui.navigator.resources.OpenActions"
+              priority="highest">
         </actionProvider>
         <actionProvider
               class="com.codeaffine.archive.ui.internal.extract.ExtractEntryActionProvider"
@@ -65,7 +66,7 @@
          point="org.eclipse.ui.popupMenus">
       <objectContribution
             adaptable="true"
-            id="com.codeaffine.archive.ui.objectContribution1"
+            id="com.codeaffine.archive.ui.internal.extractObjectContribution"
             objectClass="org.eclipse.core.resources.IResource">
          <visibility>
             <objectState
@@ -79,7 +80,8 @@
                icon="$nl$/icons/elcl16/extract_action.png"
                id="com.codeaffine.archive.ui.internal.extract.ExtractFileAction"
                label="E&amp;xtract..."
-               menubarPath="additions">
+               menubarPath="additions"
+               tooltip="Extract archive content">
          </action>
       </objectContribution>
    </extension>

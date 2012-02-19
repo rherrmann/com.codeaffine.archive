@@ -33,7 +33,7 @@ public class OpenActionProvider extends CommonActionProvider {
   @Override
   public void fillActionBars( IActionBars actionBars ) {
     if( openAction != null && openAction.isEnabled() ) {
-      actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, openAction );
+      actionBars.setGlobalActionHandler( ICommonActionConstants.OPEN, openAction );
     }
   }
 

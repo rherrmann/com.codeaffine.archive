@@ -23,6 +23,17 @@ public class OpenAction extends BaseSelectionListenerAction {
   }
 
   @Override
+  public void run() {
+    try {
+      for( FileEntry fileEntry : getSelectedFileEntries( getStructuredSelection() ) ) {
+        new EditorOpener( page, fileEntry ).open();
+      }
+    } catch( PartInitException pie ) {
+      StatusUtil.show( pie );
+    }
+  }
+
+  @Override
   protected boolean updateSelection( IStructuredSelection selection ) {
     return getSelectedFileEntries( selection ).length > 0;
   }
@@ -37,16 +48,5 @@ public class OpenAction extends BaseSelectionListenerAction {
       }
     }
     return fileEntries.toArray( new FileEntry[ fileEntries.size() ] );
-  }
-
-  @Override
-  public void run() {
-    try {
-      for( FileEntry fileEntry : getSelectedFileEntries( getStructuredSelection() ) ) {
-        new EditorOpener( page, fileEntry ).open();
-      }
-    } catch( PartInitException pie ) {
-      StatusUtil.show( pie );
-    }
   }
 }
