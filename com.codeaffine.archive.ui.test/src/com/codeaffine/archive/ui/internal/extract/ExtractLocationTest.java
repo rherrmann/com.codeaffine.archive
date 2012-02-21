@@ -13,8 +13,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.codeaffine.archive.ui.test.FileHelper;
-import com.codeaffine.archive.ui.test.TestProject;
+import com.codeaffine.archive.testfixture.FileHelper;
+import com.codeaffine.archive.testfixture.TestProject;
 
 
 public class ExtractLocationTest {

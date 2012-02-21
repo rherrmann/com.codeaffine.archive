@@ -12,12 +12,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.codeaffine.archive.ui.internal.model.Archive;
-import com.codeaffine.archive.ui.internal.model.ArchiveEntry;
-import com.codeaffine.archive.ui.internal.model.ArchiveReader;
-import com.codeaffine.archive.ui.internal.model.DirectoryEntry;
-import com.codeaffine.archive.ui.internal.model.FileEntry;
-import com.codeaffine.archive.ui.test.FileHelper;
+import com.codeaffine.archive.testfixture.FileHelper;
 
 
 public class ArchiveReaderTest {

@@ -18,10 +18,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.codeaffine.archive.testfixture.FileHelper;
+import com.codeaffine.archive.testfixture.TestProject;
 import com.codeaffine.archive.ui.internal.model.ArchiveEntry;
 import com.codeaffine.archive.ui.internal.model.FileEntry;
-import com.codeaffine.archive.ui.test.FileHelper;
-import com.codeaffine.archive.ui.test.TestProject;
 
 
 public class ArchiveExtractorJobTest {

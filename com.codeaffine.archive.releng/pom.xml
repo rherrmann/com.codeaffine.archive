@@ -77,8 +77,10 @@
     <module>repository</module>
     <module>../com.codeaffine.archive.ui</module>
     <module>../com.codeaffine.archive.contenttype</module>
-    <module>../com.codeaffine.archive.ui.test</module>
+    <module>../com.codeaffine.archive.testfixture</module>
     <module>../com.codeaffine.archive.contenttype.test</module>
+    <module>../com.codeaffine.archive.ui.test</module>
+    <module>../com.codeaffine.archive.ui.itest</module>
   </modules>
 
   <repositories>
@@ -91,6 +93,11 @@
       <id>mockito-1.8.4</id>
       <layout>p2</layout>
       <url>http://rherrmann.github.com/com.codeaffine.archive/mockito-1.8.4</url>
+    </repository>
+    <repository>
+      <id>swtbot</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/technology/swtbot/helios/dev-build/update-site</url>
     </repository>
   </repositories>
 
