@@ -51,7 +51,9 @@ class FilesystemWriter implements ExtractWriter {
   private File makeDirectories( IPath path ) {
     IPath directories = path.removeLastSegments( 1 );
     File result = new File( rootDirectory, directories.toPortableString() );
-    result.mkdirs();
+    if( !result.mkdirs() ) {
+      throw new RuntimeException( "Failed to create directory: " + result );
+    }
     return result;
   }
 

@@ -4,13 +4,51 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <name>Archive Utilities Build</name>
-
   <groupId>com.codeaffine.archive</groupId>
   <artifactId>com.codeaffine.archive.parent</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <name>Archive Utilities Build</name>
+  <description>Plug-in for the Eclipse IDE to view and extract (zip) archive files.</description>
+  <url>http://rherrmann.github.com/com.codeaffine.archive/index.html</url>
+  
+  <developers>
+    <developer>
+      <id>rh</id>
+      <name>Rüdiger Herrmann</name>
+      <email>rherrmann@codeaffine.com</email>
+      <url>http://www.codeaffine.com/author/rherrmann</url>
+      <organization>Codeaffine</organization>
+      <organizationUrl>http://codeaffine.com</organizationUrl>
+    </developer>
+  </developers>
+  
+  <licenses>
+    <license>
+      <name>Free for non-commerical use</name>
+      <url>http://rherrmann.github.com/com.codeaffine.archive/license.txt</url>
+      <distribution>repo</distribution>
+      <comments>
+        Use of the software for noncommercial purposes is free of charge. If you are going 
+        to use the software for any commercial purpose or in any way that is not specifically 
+        authorized in the user license agreement, please contact the author.
+      </comments>
+    </license>
+  </licenses>  
+  
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/rherrmann/com.codeaffine.archive/issues</url>
+  </issueManagement>
+  
+  <scm>
+    <connection>scm:git://github.com/rherrmann/com.codeaffine.archive.git</connection>
+    <developerConnection>scm:https://rherrmann@github.com/rherrmann/com.codeaffine.archive.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/rherrmann/com.codeaffine.archive</url>
+  </scm>
+  
   <properties>
     <tycho-version>0.14.0</tycho-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -103,6 +141,10 @@
 
   <pluginRepositories>
     <pluginRepository>
+      <id>mojo.codehaus.org</id>
+      <url>http://repo1.maven.org/maven2/org/codehaus/mojo</url>
+    </pluginRepository>
+    <pluginRepository>
       <id>maven.eclipse.org</id>
       <url>http://maven.eclipse.org/nexus/content/repositories/milestone-indigo</url>
     </pluginRepository>
@@ -164,8 +206,48 @@
           </dependencies>
         </configuration>
       </plugin>
-
+      
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>2.4.0</version>
+        <configuration>
+          <effort>Max</effort>
+          <threshold>Low</threshold>
+          <failOnError>false</failOnError>
+          <xmlOutput>true</xmlOutput>
+          <findbugsXmlOutput>true</findbugsXmlOutput>
+          <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+        </configuration>
+        <executions>
+					<execution>
+						<phase>pre-integration-test</phase>
+						<goals>
+						  <goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+      </plugin>
+      
     </plugins>
   </build>
+  
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>2.4.0</version>
+        <configuration>
+          <effort>Max</effort>
+          <threshold>Low</threshold>
+          <failOnError>false</failOnError>
+          <xmlOutput>true</xmlOutput>
+          <findbugsXmlOutput>true</findbugsXmlOutput>
+          <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 
 </project>
