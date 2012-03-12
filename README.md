@@ -13,7 +13,7 @@ Each working code bundle has an accomanying fragment (with the suffix `.test`) t
 In addition, there are integration tests, located in the `com.codeaffine.archive.ui.itest` bundle. These depend on [SWTBot](http://eclipse.org/swtbot) and are also run as unit tests with JUnit.
 Common helper and fixture code for all tests is in `com.codeaffine.archive.testfixture`.
 
-The `com.codeaffine.archive.alltest` bundle contains a test suite that references all the tests and should be used to run all tests from the IDE.
+The `com.codeaffine.archive.alltest` bundle contains a test suite that references all unit tests (not the integration tests) and should be used to run all tests from within the IDE.
 
 ### Target Platform
 The `target` project contains a [target platform](http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Fconcepts%2Ftarget.htm) definition that should be used for development. 
