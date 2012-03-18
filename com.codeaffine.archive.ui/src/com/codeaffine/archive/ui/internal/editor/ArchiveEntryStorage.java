@@ -72,7 +72,7 @@ public class ArchiveEntryStorage extends PlatformObject implements IStorage {
   }
 
   private static void handleException( Exception exception ) throws CoreException {
-    IStatus status = StatusUtil.createStatus( exception );
+    IStatus status = StatusUtil.createErrorStatus( exception );
     throw new CoreException( status );
   }
 }

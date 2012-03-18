@@ -72,7 +72,7 @@ class ArchiveExtractor {
         inputStream.close();
       }
     } catch( IOException ioe ) {
-      throw new CoreException( StatusUtil.createStatus( ioe ) );
+      throw new CoreException( StatusUtil.createErrorStatus( ioe ) );
     }
   }
 

@@ -2,7 +2,6 @@ package com.codeaffine.archive.ui.internal.extract;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.StatusDialog;
 import org.eclipse.jface.layout.GridLayoutFactory;
@@ -21,7 +20,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
-import com.codeaffine.archive.ui.internal.ArchiveUiActivator;
+import com.codeaffine.archive.ui.internal.util.StatusUtil;
 
 class ExtractDialog extends StatusDialog {
   private final IStatus initialStatus;
@@ -178,8 +177,7 @@ class ExtractDialog extends StatusDialog {
     updateStatus( location.validate() );
   }
 
-  private static Status createInitialStatus() {
-    String pluginId = ArchiveUiActivator.getDefault().getBundle().getSymbolicName();
-    return new Status( IStatus.OK, pluginId, "" );
+  private static IStatus createInitialStatus() {
+    return StatusUtil.createStatus( IStatus.OK, "", null );
   }
 }

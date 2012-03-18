@@ -3,17 +3,16 @@ package com.codeaffine.archive.ui.internal.util;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.statushandlers.StatusManager;
-
-import com.codeaffine.archive.ui.internal.ArchiveUiActivator;
+import org.osgi.framework.FrameworkUtil;
 
 public class StatusUtil {
 
-  public static void log( Throwable throwable ) {
-    IStatus status = createStatus( throwable );
+  public static void logError( Throwable throwable ) {
+    IStatus status = createErrorStatus( throwable );
     StatusManager.getManager().handle( status, StatusManager.LOG );
   }
 
-  public static void log( String message, Throwable throwable ) {
+  public static void logError( String message, Throwable throwable ) {
     IStatus status = createStatus( IStatus.ERROR, message, throwable );
     StatusManager.getManager().handle( status, StatusManager.LOG );
   }
@@ -24,11 +23,11 @@ public class StatusUtil {
   }
 
   public static void show( Throwable exception ) {
-    IStatus status = createStatus( exception );
+    IStatus status = createErrorStatus( exception );
     StatusManager.getManager().handle( status, StatusManager.SHOW | StatusManager.LOG );
   }
 
-  public static IStatus createStatus( Throwable throwable ) {
+  public static IStatus createErrorStatus( Throwable throwable ) {
     return createStatus( IStatus.ERROR, throwable.getMessage(), throwable );
   }
 
@@ -37,7 +36,7 @@ public class StatusUtil {
   }
 
   private static String getPluginId() {
-    return ArchiveUiActivator.getDefault().getBundle().getSymbolicName();
+    return FrameworkUtil.getBundle( StatusUtil.class ).getSymbolicName();
   }
 
   private StatusUtil() {

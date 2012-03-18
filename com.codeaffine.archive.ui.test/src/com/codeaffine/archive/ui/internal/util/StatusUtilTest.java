@@ -15,7 +15,7 @@ public class StatusUtilTest {
     String message = "message";
     Throwable exception = new Throwable( message );
     
-    IStatus status = StatusUtil.createStatus( exception );
+    IStatus status = StatusUtil.createErrorStatus( exception );
     
     assertEquals( message, status.getMessage() );
     assertSame( exception, status.getException() );

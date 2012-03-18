@@ -71,7 +71,7 @@ class ArchiveContentProvider implements ITreeContentProvider {
       try {
         result = ArchiveReader.read( file );
       } catch( IOException ioe ) {
-        StatusUtil.log( ioe );
+        StatusUtil.logError( ioe );
       }
     }
     return result;

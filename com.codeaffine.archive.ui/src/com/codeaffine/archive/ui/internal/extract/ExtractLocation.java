@@ -11,7 +11,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 
-import com.codeaffine.archive.ui.internal.ArchiveUiActivator;
+import com.codeaffine.archive.ui.internal.util.StatusUtil;
 
 
 class ExtractLocation {
@@ -116,13 +116,11 @@ class ExtractLocation {
     return ResourcesPlugin.getWorkspace().getRoot().findMember( path ) instanceof IContainer;
   }
 
-  private static Status createErrorStatus( String message ) {
-    String pluginId = ArchiveUiActivator.getDefault().getBundle().getSymbolicName();
-    return new Status( IStatus.ERROR, pluginId, message );
+  private static IStatus createErrorStatus( String message ) {
+    return StatusUtil.createStatus( IStatus.ERROR, message, null );
   }
 
   private static IStatus createWarningStatus( String message ) {
-    String pluginId = ArchiveUiActivator.getDefault().getBundle().getSymbolicName();
-    return new Status( IStatus.WARNING, pluginId, message );
+    return StatusUtil.createStatus( IStatus.WARNING, message, null );
   }
 }

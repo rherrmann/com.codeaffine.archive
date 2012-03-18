@@ -7,7 +7,6 @@ import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -26,7 +25,7 @@ import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.views.navigator.ResourceComparator;
 
-import com.codeaffine.archive.ui.internal.ArchiveUiActivator;
+import com.codeaffine.archive.ui.internal.util.StatusUtil;
 
 
 class WorkspaceFolderSelectionDialog extends ElementTreeSelectionDialog {
@@ -103,12 +102,11 @@ class WorkspaceFolderSelectionDialog extends ElementTreeSelectionDialog {
     private static final Class<?>[] ACCEPTED_TYPES = new Class[]{ IProject.class, IFolder.class };
 
     public IStatus validate( Object[] elements ) {
-      String pluginId = ArchiveUiActivator.getDefault().getBundle().getSymbolicName();
       IStatus result;
       if( !isValid( elements ) ) {
-        result = new Status( IStatus.ERROR, pluginId, "" );
+        result = StatusUtil.createStatus( IStatus.ERROR, "", null );
       } else {
-        result = new Status( IStatus.OK, pluginId, "" );
+        result = StatusUtil.createStatus( IStatus.OK, "", null );
       }
       return result;
     }

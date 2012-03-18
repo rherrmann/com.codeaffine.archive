@@ -26,7 +26,7 @@ class FilesystemWriter implements ExtractWriter {
     try {
       write( inputStream, destinationFile );
     } catch( IOException ioe ) {
-      throw new CoreException( StatusUtil.createStatus( ioe ) );
+      throw new CoreException( StatusUtil.createErrorStatus( ioe ) );
     }
   }
 

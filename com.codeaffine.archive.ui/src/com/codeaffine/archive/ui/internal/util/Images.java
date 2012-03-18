@@ -3,12 +3,10 @@ package com.codeaffine.archive.ui.internal.util;
 import java.net.URL;
 
 import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.osgi.framework.Bundle;
-
-import com.codeaffine.archive.ui.internal.ArchiveUiActivator;
+import org.osgi.framework.FrameworkUtil;
 
 
 public final class Images {
@@ -22,9 +20,8 @@ public final class Images {
   public static final ImageDescriptor EXTRACT_ACTION = create( PATH_LOCAL + "extract_action.png" ); //$NON-NLS-1$
 
   private static ImageDescriptor create( String name ) {
-    Bundle bundle = ArchiveUiActivator.getDefault().getBundle();
-    IPath path = new Path( name );
-    URL imageUrl = FileLocator.find( bundle, path, null );
+    Bundle bundle = FrameworkUtil.getBundle( Images.class );
+    URL imageUrl = FileLocator.find( bundle, new Path( name ), null );
     return ImageDescriptor.createFromURL( imageUrl );
   }
 
