@@ -1,15 +1,14 @@
 env:
   global:
-    secure: AH6JUSKRpfmfU/K0VqTBtwEZSNCUcP+JEYIWSNQ/HtbBXAPKfEp91ywOlRb6KQUv0anFtZH2UFL7C0CFY81sALfMEWKQXwi7SH4RjgO4mAfT6tmWb+CgeS98M2sY8oEnfX/Riv3cxvz1Yrq1vijZMY1GV3/TuBHKEMYecjMS1Ss=
+    secure: KDpz0qYqt5yI6mMW+ZXk5hwgz1SyY9yp/zVXQBx1uhvGTiyDwUJpv7bw1T5QeqtuNLAuFmz/6uPThCZucdU77VOQ9wuUaXrvD13KHA+v4LrJZ2pwnkZ6FZE4az0v+IHk6Y4mghyajuXUn2SgTXHHnAcahTd1Qesnn9UVu56xtBM=
 
 language: java
 
 jdk:
   - openjdk6
-
 branches:
   only:
-    - master
+  - master
 
 install: true
 
@@ -20,16 +19,16 @@ before_install:
   - sudo apt-get install libwebkit-dev
 
 before_script:
-  - "export DISPLAY=:99.0"
+  - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - sleep 3
   - metacity --sm-disable --replace &
   - sleep 3
- 
+
 script:
   - mvn -f com.codeaffine.archive.releng/pom.xml -Dbrowser=webkit clean verify
 
-after_success: 
+after_success:
   - chmod a+x .travis-deploy.sh
   - ./.travis-deploy.sh
 
