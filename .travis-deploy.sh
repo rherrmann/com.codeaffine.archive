@@ -21,12 +21,13 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; th
   # clean the repository directory, then copy the build result into it
   git rm -rf repository
   mkdir -p repository 
-  cp -rf ../com.codeaffine.gonsole.releng/repository/target/repository/* ./repository
+  cp -rf ../com.codeaffine.archive.releng/repository/target/repository/* ./repository
   
   # add, commit and push files
   git add -f .
   git commit -m "[ci skip] Deploy Travis build #$TRAVIS_BUILD_NUMBER to gh-pages"
-  git push -fq origin gh-pages > /dev/null 2>&1 || error_exit "Error uploading the build result to gh-pages"
+  # git push -fq origin gh-pages > /dev/null 2>&1 || error_exit "Error uploading the build result to gh-pages"
+  git push -fq origin gh-pages || error_exit "Error uploading the build result to gh-pages"
 
   # go back to the directory where we started
   cd ..
