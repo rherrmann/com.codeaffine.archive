@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Archive Utilities Testfixture
+Bundle-Name: Archive Utility Testfixture
 Bundle-SymbolicName: com.codeaffine.archive.testfixture
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: Codeaffine.com
