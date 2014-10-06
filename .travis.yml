@@ -27,7 +27,6 @@ before_script:
   - sleep 3
  
 script:
-  - export -p
   - mvn -f com.codeaffine.archive.releng/pom.xml -Dbrowser=webkit clean verify
 
 after_success: 
