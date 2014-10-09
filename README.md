@@ -1,4 +1,9 @@
 # Archive Utilities for Eclipse [![Build Status](https://travis-ci.org/rherrmann/com.codeaffine.archive.png)](https://travis-ci.org/rherrmann/com.codeaffine.archive)
+<a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1954981" 
+  title="Drag and drop onto a running Eclipse main toolbar to install Eclipse Archive Utility">
+  <img src="http://marketplace.eclipse.org/sites/all/modules/custom/marketplace/images/installbutton.png"/>
+</a>
+
 The Archive Utilities extend the Eclipse IDE to view the structure and content and extract zip archive files within the workspace. Zip-compatible archives like JARs, WARs, etc. are of course also supported.
 
 This document is targeted at developers. For user documentation, pease read [this document](http://rherrmann.github.com/com.codeaffine.archive/index.html)
