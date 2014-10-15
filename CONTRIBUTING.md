@@ -24,7 +24,7 @@ Open one of them and select the 'Set as Target Platform' link.
 Now you are ready to hack the sources.
 If you whish to verify the setup, you can run the test suites. There is a launch configurations to run them all: All Archive Tests
 
-Archive Utilities uses Maven/Tycho to build, the parent pom can be found in com.codeaffine.archive.releng.
+Archive Utility uses Maven/Tycho to build, the parent pom can be found in com.codeaffine.archive.releng.
 
 
 # Project License:  Eclipse Public License
