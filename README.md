@@ -9,7 +9,7 @@ This document is targeted at developers. For user documentation, pease read [thi
 The bundles `com.codeaffine.archive.contenttype` and `com.codeaffine.archive.ui` contain all the functionality.
 
 ### Tests
-Each working code bundle has an accomanying fragment (with the suffix `.test`) that contains JUnit tests.
+Each working code bundle has an accompanying fragment (with the suffix `.test`) that contains JUnit tests.
 In addition, there are integration tests, located in the `com.codeaffine.archive.ui.itest` bundle. These depend on [SWTBot](http://eclipse.org/swtbot) and are also run as unit tests with JUnit.
 Common helper and fixture code for all tests is in `com.codeaffine.archive.testfixture`.
 
