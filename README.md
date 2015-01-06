@@ -26,5 +26,8 @@ The `com.codeaffine.archive.releng` project contains everything that is necessar
     
 &lt;eclipse-platform&gt; can be one of `eclipse-3.6`, `eclipse-3.7`, `eclipse-3.8`, `eclipse-4.2`. If you omit the -P (maven profile) command line argument, the default `eclipse-3.7` is taken.
 
+### Contributing
+Please see the [contributing guidelines](CONTRIBUTING.md).
+
 ## License
 The code is published under the terms of the [Eclipse Public License, version 1.0](https://www.eclipse.org/legal/epl-v10.html).
