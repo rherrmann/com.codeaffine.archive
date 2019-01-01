@@ -105,7 +105,7 @@ class ExtractDialog extends StatusDialog {
 
   private void createLocationText() {
     txtLocation = new Text( parent, SWT.BORDER );
-    txtLocation.setLayoutData( new GridData( SWT.FILL, SWT.TOP, true, false ) );
+    txtLocation.setLayoutData( new GridData( SWT.FILL, SWT.CENTER, true, false ) );
     txtLocation.addModifyListener( new ModifyListener() {
       public void modifyText( ModifyEvent event ) {
         updateLocation();
@@ -143,7 +143,7 @@ class ExtractDialog extends StatusDialog {
   private Button createButton( String text ) {
     Button result = new Button( parent, SWT.PUSH );
     result.setText( text );
-    result.setLayoutData( new GridData( SWT.FILL, SWT.TOP, false, false ) );
+    result.setLayoutData( new GridData( SWT.FILL, SWT.CENTER, false, false ) );
     return result;
   }
 
