@@ -4,8 +4,14 @@ env:
 
 language: java
 
+addons:
+  apt:
+    packages:
+      - openjdk-6-jdk
+
 jdk:
   - openjdk6
+
 branches:
   only:
   - master
