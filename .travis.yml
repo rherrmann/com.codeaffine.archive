@@ -2,15 +2,12 @@ env:
   global:
     secure: KDpz0qYqt5yI6mMW+ZXk5hwgz1SyY9yp/zVXQBx1uhvGTiyDwUJpv7bw1T5QeqtuNLAuFmz/6uPThCZucdU77VOQ9wuUaXrvD13KHA+v4LrJZ2pwnkZ6FZE4az0v+IHk6Y4mghyajuXUn2SgTXHHnAcahTd1Qesnn9UVu56xtBM=
 
+dist: trusty
+
 language: java
 
-addons:
-  apt:
-    packages:
-      - openjdk-6-jdk
-
 jdk:
-  - openjdk6
+  - openjdk8
 
 branches:
   only:
@@ -32,6 +29,7 @@ before_script:
   - sleep 3
 
 script:
+  - jdk_switcher use openjdk8
   - mvn -f com.codeaffine.archive.releng/pom.xml -Dbrowser=webkit clean verify
 
 after_success:
