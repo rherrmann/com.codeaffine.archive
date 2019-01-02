@@ -30,7 +30,7 @@ before_script:
 
 script:
   - jdk_switcher use openjdk8
-  - mvn -f com.codeaffine.archive.releng/pom.xml -Dbrowser=webkit clean verify
+  - ./mvnw -f com.codeaffine.archive.releng/pom.xml -Dbrowser=webkit clean verify
 
 after_success:
   - chmod a+x .travis-deploy.sh
