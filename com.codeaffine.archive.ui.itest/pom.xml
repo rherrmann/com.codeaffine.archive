@@ -16,6 +16,10 @@
     <relativePath>../com.codeaffine.archive.releng/pom.xml</relativePath>
   </parent>
 
+  <properties>
+    <itest.vmargs />
+  </properties>
+
   <profiles>
     <profile>
       <id>skip-itests</id>
@@ -37,19 +41,7 @@
         </os>
       </activation>
       <properties>
-        <itest.vmargs>-nl en -consoleLog -XstartOnFirstThread</itest.vmargs>
-      </properties>
-    </profile>
-    <profile>
-      <id>other-os</id>
-      <activation>
-        <os>
-          <name>not-mac</name>
-          <family>!mac</family>
-        </os>
-      </activation>
-      <properties>
-        <itest.vmargs>-nl en -consoleLog</itest.vmargs>
+        <itest.vmargs>-XstartOnFirstThread</itest.vmargs>
       </properties>
     </profile>
   </profiles>
@@ -67,6 +59,7 @@
           <useUIHarness>true</useUIHarness>
           <useUIThread>false</useUIThread>
           <application>org.eclipse.ui.ide.workbench</application>
+          <appArgLine>-nl en -consoleLog</appArgLine>
           <argLine>${itest.vmargs}</argLine>
           <dependencies>
 	          <!-- Extra bundles, neccessary to run on Eclipse 4.2 -->

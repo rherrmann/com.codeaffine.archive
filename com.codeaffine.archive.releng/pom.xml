@@ -12,10 +12,11 @@
   <packaging>pom</packaging>
 
   <properties>
-    <tycho-version>0.20.0</tycho-version>
-    <tycho-extras-version>0.20.0</tycho-extras-version>
+    <tycho-version>1.1.0</tycho-version>
+    <tycho-extras-version>1.1.0</tycho-extras-version>
     <target-platform-classifier>eclipse-3.8</target-platform-classifier>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <os-jvm-flags/>
   </properties>
 
   <prerequisites>
@@ -40,9 +41,21 @@
     </pluginRepository>
   </pluginRepositories>
 
+  <profiles>
+    <profile>
+      <id>macos-jvm-flags</id>
+      <activation>
+        <os><family>mac</family></os>
+      </activation>
+      <properties>
+        <os-jvm-flags>-XstartOnFirstThread</os-jvm-flags>
+      </properties>
+    </profile>
+  </profiles>
+
   <build>
     <plugins>
-        
+
       <plugin>
          <groupId>org.eclipse.tycho</groupId>
          <artifactId>target-platform-configuration</artifactId>
@@ -89,13 +102,14 @@
           </execution>
         </executions>
       </plugin>
-      
+
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-surefire-plugin</artifactId>
         <version>${tycho-version}</version>
         <configuration>
           <useUIHarness>true</useUIHarness>
+          <argLine>-Xmx512m ${os-jvm-flags}</argLine>
           <appArgLine>-nl en -consoleLog</appArgLine>
           <includes>
             <include>**/*Test.*</include>
