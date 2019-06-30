@@ -6,7 +6,7 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: Codeaffine.com
 Fragment-Host: com.codeaffine.archive.ui
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: com.codeaffine.archive.ui.test;version="1.0.0.qualifier"
+Export-Package: com.codeaffine.archive.ui.test;version="0.1.0.qualifier"
 Import-Package: com.codeaffine.archive.testfixture;version="[0.1.0,2.0.0)", 
  org.junit;version="[4.8.1,5.0.0)",
  org.junit.runner;version="[4.8.1,5.0.0)",
@@ -14,3 +14,4 @@ Import-Package: com.codeaffine.archive.testfixture;version="[0.1.0,2.0.0)",
  org.mockito;version="[1.8.4,2.0.0)",
  org.mockito.invocation;version="[1.8.4,2.0.0)",
  org.mockito.stubbing;version="[1.8.4,2.0.0)"
+Automatic-Module-Name: com.codeaffine.archive.ui.test
