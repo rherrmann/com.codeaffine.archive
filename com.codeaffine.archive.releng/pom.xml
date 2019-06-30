@@ -14,7 +14,7 @@
   <properties>
     <tycho-version>1.1.0</tycho-version>
     <tycho-extras-version>1.1.0</tycho-extras-version>
-    <target-platform-classifier>eclipse-3.8</target-platform-classifier>
+    <target-platform-classifier>eclipse-4.12</target-platform-classifier>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <os-jvm-flags/>
   </properties>
@@ -114,7 +114,7 @@
           <includes>
             <include>**/*Test.*</include>
           </includes>
-          <!-- Extra bundles, neccessary to run on Eclipse 4.x -->
+          <!-- Extra bundles, necessary to run on Eclipse 4.x -->
           <dependencies>
             <dependency>
               <type>p2-installable-unit</type>
