@@ -1,14 +1,14 @@
 package com.codeaffine.archive.ui.internal.viewer;
 
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.jface.viewers.ViewerComparator;
 
 import com.codeaffine.archive.ui.internal.model.ArchiveEntry;
 import com.codeaffine.archive.ui.internal.model.DirectoryEntry;
 import com.codeaffine.archive.ui.internal.model.FileEntry;
 
 
-public class ArchiveEntrySorter extends ViewerSorter {
+public class ArchiveEntrySorter extends ViewerComparator {
 
   @Override
   public int compare( Viewer viewer, Object object1, Object object2 ) {
