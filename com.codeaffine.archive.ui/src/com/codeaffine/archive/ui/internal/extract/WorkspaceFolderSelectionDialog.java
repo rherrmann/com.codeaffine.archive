@@ -101,6 +101,7 @@ class WorkspaceFolderSelectionDialog extends ElementTreeSelectionDialog {
   static class WorkspaceFolderValidator implements ISelectionStatusValidator {
     private static final Class<?>[] ACCEPTED_TYPES = new Class[]{ IProject.class, IFolder.class };
 
+    @Override
     public IStatus validate( Object[] elements ) {
       IStatus result;
       if( !isValid( elements ) ) {

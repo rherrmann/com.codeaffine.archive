@@ -11,27 +11,33 @@ import com.codeaffine.archive.ui.internal.util.StatusUtil;
 public class ArchiveContentProviderWrapper implements ITreeContentProvider {
   private ITreeContentProvider delegate;
 
+  @Override
   public void inputChanged( Viewer viewer, Object oldInput, Object newInput ) {
     updateDelegate();
     logWarning();
   }
 
+  @Override
   public Object[] getElements( Object inputElement ) {
     return delegate.getElements( inputElement );
   }
 
+  @Override
   public Object[] getChildren( Object parentElement ) {
     return delegate.getChildren( parentElement );
   }
 
+  @Override
   public Object getParent( Object element ) {
     return delegate.getParent( element );
   }
 
+  @Override
   public boolean hasChildren( Object element ) {
     return delegate.hasChildren( element );
   }
 
+  @Override
   public void dispose() {
     delegate.dispose();
   }
@@ -55,26 +61,32 @@ public class ArchiveContentProviderWrapper implements ITreeContentProvider {
   }
 
   private static class NullContentProvider implements ITreeContentProvider {
-    public void inputChanged( Viewer viewer, Object oldInput, Object newInput ) {
+    @Override
+	public void inputChanged( Viewer viewer, Object oldInput, Object newInput ) {
     }
 
-    public Object[] getElements( Object inputElement ) {
+    @Override
+	public Object[] getElements( Object inputElement ) {
       return null;
     }
 
-    public Object[] getChildren( Object parentElement ) {
+    @Override
+	public Object[] getChildren( Object parentElement ) {
       return null;
     }
 
-    public Object getParent( Object element ) {
+    @Override
+	public Object getParent( Object element ) {
       return null;
     }
 
-    public boolean hasChildren( Object element ) {
+    @Override
+	public boolean hasChildren( Object element ) {
       return false;
     }
 
-    public void dispose() {
+    @Override
+	public void dispose() {
     }
   }
 }

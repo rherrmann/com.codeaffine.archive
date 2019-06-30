@@ -61,23 +61,28 @@ public class ContentTypeUtil {
 
   static class NullContentDescription implements IContentDescription {
 
-    public boolean isRequested( QualifiedName key ) {
+    @Override
+	public boolean isRequested( QualifiedName key ) {
       return false;
     }
 
-    public String getCharset() {
+    @Override
+	public String getCharset() {
       return null;
     }
 
-    public IContentType getContentType() {
+    @Override
+	public IContentType getContentType() {
       return null;
     }
 
-    public Object getProperty( QualifiedName key ) {
+    @Override
+	public Object getProperty( QualifiedName key ) {
       return null;
     }
 
-    public void setProperty( QualifiedName key, Object value ) {
+    @Override
+	public void setProperty( QualifiedName key, Object value ) {
     }
   }
 }

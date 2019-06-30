@@ -5,7 +5,7 @@ Bundle-SymbolicName: com.codeaffine.archive.contenttype;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: CodeAffine.com
 Eclipse-ExtensibleAPI: true
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.core.contenttype;bundle-version="[3.4.0,4.0.0)",
  org.eclipse.core.runtime;bundle-version="[3.6.0,4.0.0)"
 Export-Package: com.codeaffine.archive.contenttype;version="1.0.0.qualifier",

@@ -22,6 +22,7 @@ public class ArchiveEntryStorage extends PlatformObject implements IStorage {
     this.contentType = contentType;
   }
 
+  @Override
   public InputStream getContents() throws CoreException {
     try {
       return fileEntry.open();
@@ -31,10 +32,12 @@ public class ArchiveEntryStorage extends PlatformObject implements IStorage {
     }
   }
 
+  @Override
   public IPath getFullPath() {
     return null;
   }
 
+  @Override
   public String getName() {
     return fileEntry.getName();
   }
@@ -47,6 +50,7 @@ public class ArchiveEntryStorage extends PlatformObject implements IStorage {
     return contentType;
   }
 
+  @Override
   public boolean isReadOnly() {
     return true;
   }

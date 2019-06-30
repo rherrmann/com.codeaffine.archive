@@ -17,17 +17,21 @@ import com.codeaffine.archive.ui.internal.util.StatusUtil;
 
 class ArchiveContentProvider implements ITreeContentProvider {
 
+  @Override
   public void inputChanged( Viewer viewer, Object oldInput, Object newInput ) {
   }
 
+  @Override
   public Object[] getElements( Object inputElement ) {
     return null;
   }
 
+  @Override
   public Object getParent( Object element ) {
     return null;
   }
 
+  @Override
   public Object[] getChildren( Object parentElement ) {
     Object[] result = null;
     if( parentElement instanceof IFile ) {
@@ -38,10 +42,12 @@ class ArchiveContentProvider implements ITreeContentProvider {
     return result;
   }
 
+  @Override
   public boolean hasChildren( Object element ) {
     return isArchiveFile( element ) || isDirectoryEntry( element );
   }
 
+  @Override
   public void dispose() {
   }
 

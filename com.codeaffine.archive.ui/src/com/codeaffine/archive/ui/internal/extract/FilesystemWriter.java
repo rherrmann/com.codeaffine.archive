@@ -20,6 +20,7 @@ class FilesystemWriter implements ExtractWriter {
     this.rootDirectory = rootDirectory;
   }
 
+  @Override
   public void write( IPath path, InputStream inputStream ) throws CoreException {
     File destinationDirectory = makeDirectories( path );
     File destinationFile = new File( destinationDirectory, path.lastSegment() );

@@ -17,6 +17,7 @@ class DelegatingExtractWriter implements ExtractWriter {
     }
   }
 
+  @Override
   public void write( IPath path, InputStream inputStream ) throws CoreException {
     delegate.write( path, inputStream );
   }

@@ -34,16 +34,19 @@ public class PersistableEditorInputFactory implements IElementFactory, IPersista
     this.editorInput = editorInput;
   }
 
+  @Override
   public void saveState( IMemento memento ) {
     int identifier = editorInput.hashCode();
     persistedEditorInputs.put( Integer.valueOf( identifier ), editorInput );
     memento.putInteger( ELEMENT_ID, identifier );
   }
 
+  @Override
   public String getFactoryId() {
     return FACTORY_ID;
   }
 
+  @Override
   public IAdaptable createElement( IMemento memento ) {
     return persistedEditorInputs.remove( memento.getInteger( ELEMENT_ID ) );
   }

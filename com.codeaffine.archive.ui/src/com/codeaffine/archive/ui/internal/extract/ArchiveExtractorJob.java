@@ -53,6 +53,7 @@ class ArchiveExtractorJob extends Job {
 
   private IRunnableWithProgress createFilesystemExtractOperation() {
     return new IRunnableWithProgress() {
+      @Override
       public void run( IProgressMonitor progressMonitor )
         throws InvocationTargetException, InterruptedException
       {

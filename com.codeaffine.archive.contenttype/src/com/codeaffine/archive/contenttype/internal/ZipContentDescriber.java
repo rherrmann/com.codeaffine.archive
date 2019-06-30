@@ -11,9 +11,10 @@ import org.eclipse.core.runtime.content.IContentDescription;
 
 public class ZipContentDescriber implements IContentDescriber {
   private static final QualifiedName[] NO_OPTIONS = new QualifiedName[ 0 ];
-  
-  private static byte[] ZIP_SIGNATURE = { 0x50, 0x4b, 0x03, 0x04, }; 
-      
+
+  private static byte[] ZIP_SIGNATURE = { 0x50, 0x4b, 0x03, 0x04, };
+
+  @Override
   public int describe( InputStream contents, IContentDescription description )
     throws IOException
   {
@@ -27,6 +28,7 @@ public class ZipContentDescriber implements IContentDescriber {
     return result;
   }
 
+  @Override
   public QualifiedName[] getSupportedOptions() {
     return NO_OPTIONS;
   }
@@ -37,7 +39,7 @@ public class ZipContentDescriber implements IContentDescriber {
     contents.read( result );
     return result;
   }
-  
+
   private static boolean isValidZipSignature( byte[] signature ) {
     boolean result = true;
     for( int i = 0; result && i < ZIP_SIGNATURE.length; i++ ) {

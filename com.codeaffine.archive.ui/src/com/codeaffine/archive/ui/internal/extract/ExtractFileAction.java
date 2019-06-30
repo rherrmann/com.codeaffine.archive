@@ -19,15 +19,18 @@ public class ExtractFileAction implements IObjectActionDelegate {
   private IWorkbenchPart part;
   private IFile file;
 
+  @Override
   public void setActivePart( IAction action, IWorkbenchPart targetPart ) {
     this.part = targetPart;
   }
 
+  @Override
   public void selectionChanged( IAction action, ISelection selection ) {
     updateSelection( selection );
     updateEnablement( action );
   }
 
+  @Override
   public void run( IAction action ) {
     if( file != null ) {
       ExtractLocation extractLocation = ExtractDialog.chooseLocation( part.getSite().getShell() );

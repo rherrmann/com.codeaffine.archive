@@ -22,27 +22,33 @@ public class ArchiveEntryEditorInput extends PlatformObject implements IStorageE
     this.storage = storage;
   }
 
+  @Override
   public IStorage getStorage() {
     return storage;
   }
 
+  @Override
   public ImageDescriptor getImageDescriptor() {
     IEditorRegistry editorRegistry = PlatformUI.getWorkbench().getEditorRegistry();
     return editorRegistry.getImageDescriptor( storage.getName(), storage.getContentType() );
   }
 
+  @Override
   public String getName() {
     return storage.getName();
   }
 
+  @Override
   public IPersistableElement getPersistable() {
     return new PersistableEditorInputFactory( this );
   }
 
+  @Override
   public String getToolTipText() {
     return storage.getArchiveName() + "::" + storage.getName();
   }
 
+  @Override
   public boolean exists() {
     return false;
   }

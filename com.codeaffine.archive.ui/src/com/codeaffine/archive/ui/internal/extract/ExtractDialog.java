@@ -7,8 +7,6 @@ import org.eclipse.jface.dialogs.StatusDialog;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
@@ -106,11 +104,7 @@ class ExtractDialog extends StatusDialog {
   private void createLocationText() {
     txtLocation = new Text( parent, SWT.BORDER );
     txtLocation.setLayoutData( new GridData( SWT.FILL, SWT.CENTER, true, false ) );
-    txtLocation.addModifyListener( new ModifyListener() {
-      public void modifyText( ModifyEvent event ) {
-        updateLocation();
-      }
-    } );
+    txtLocation.addModifyListener( event -> updateLocation() );
   }
 
   private void createExternalFolderButton() {

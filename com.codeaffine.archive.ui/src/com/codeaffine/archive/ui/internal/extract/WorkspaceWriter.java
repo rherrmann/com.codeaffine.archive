@@ -23,6 +23,7 @@ public class WorkspaceWriter implements ExtractWriter {
     progressMonitor = new NullProgressMonitor();
   }
 
+  @Override
   public void write( IPath path, InputStream inputStream ) throws CoreException {
     IContainer destinationFolder = makeFolders( path.removeLastSegments( 1 ) );
     IFile destinationFile = destinationFolder.getFile( new Path( path.lastSegment() ) );
