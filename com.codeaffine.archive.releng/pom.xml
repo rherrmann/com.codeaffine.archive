@@ -12,8 +12,8 @@
   <packaging>pom</packaging>
 
   <properties>
-    <tycho-version>1.1.0</tycho-version>
-    <tycho-extras-version>1.1.0</tycho-extras-version>
+    <tycho-version>1.3.0</tycho-version>
+    <tycho-extras-version>1.3.0</tycho-extras-version>
     <target-platform-classifier>eclipse-4.12</target-platform-classifier>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <os-jvm-flags/>
@@ -31,7 +31,6 @@
     <module>../com.codeaffine.archive.testfixture</module>
     <module>../com.codeaffine.archive.contenttype.test</module>
     <module>../com.codeaffine.archive.ui.test</module>
-    <module>../com.codeaffine.archive.ui.itest</module>
   </modules>
 
   <pluginRepositories>
@@ -108,27 +107,13 @@
         <artifactId>tycho-surefire-plugin</artifactId>
         <version>${tycho-version}</version>
         <configuration>
+          <trimStackTrace>false</trimStackTrace>
           <useUIHarness>true</useUIHarness>
           <argLine>-Xmx512m ${os-jvm-flags}</argLine>
           <appArgLine>-nl en -consoleLog</appArgLine>
           <includes>
             <include>**/*Test.*</include>
           </includes>
-          <!-- Extra bundles, necessary to run on Eclipse 4.x -->
-          <dependencies>
-            <dependency>
-              <type>p2-installable-unit</type>
-              <artifactId>org.eclipse.equinox.ds</artifactId>
-            </dependency>
-            <dependency>
-              <type>p2-installable-unit</type>
-              <artifactId>org.eclipse.equinox.event</artifactId>
-            </dependency>
-            <dependency>
-              <type>p2-installable-unit</type>
-              <artifactId>org.eclipse.ui.views</artifactId>
-            </dependency>
-          </dependencies>
         </configuration>
       </plugin>
 
