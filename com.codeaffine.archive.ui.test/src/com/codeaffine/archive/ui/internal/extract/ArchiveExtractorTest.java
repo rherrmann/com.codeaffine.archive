@@ -28,7 +28,7 @@ public class ArchiveExtractorTest {
 
   @Test
   public void testExtractWithCanceledProgressMonitor() throws Exception {
-    when( new Boolean( progressMonitor.isCanceled() ) ).thenReturn( Boolean.TRUE );
+    when( Boolean.valueOf( progressMonitor.isCanceled() ) ).thenReturn( Boolean.TRUE );
     ArchiveExtractor extractor = new ArchiveExtractor( mock( FileEntry.class ), progressMonitor );
 
     try {

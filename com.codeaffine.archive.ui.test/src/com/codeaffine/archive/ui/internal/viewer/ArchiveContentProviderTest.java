@@ -18,64 +18,64 @@ import com.codeaffine.archive.ui.internal.viewer.ArchiveContentProvider;
 
 
 public class ArchiveContentProviderTest {
-  
+
   private ArchiveContentProvider contentProvider;
 
   @Test
   public void testGetParent() throws Exception {
     Object parent = contentProvider.getParent( new Object() );
-    
+
     assertNull( parent );
   }
-  
+
   @Test
   public void testGetElements() throws Exception {
     Object[] elements = contentProvider.getElements( new Object() );
-    
+
     assertNull( elements );
   }
-  
+
   @Test
   public void testHasChildrenWithObject() throws Exception {
     boolean hasChildren = contentProvider.hasChildren( new Object() );
-    
+
     assertFalse( hasChildren );
   }
-  
+
   @Test
   public void testHasChildrenWithParentArchiveEntry() throws Exception {
     DirectoryEntry directoryEntry = mock( DirectoryEntry.class );
-    when( new Boolean( directoryEntry.hasChildren() ) ).thenReturn( Boolean.TRUE );
-    
+    when( Boolean.valueOf( directoryEntry.hasChildren() ) ).thenReturn( Boolean.TRUE );
+
     boolean hasChildren = contentProvider.hasChildren( directoryEntry );
-    
+
     assertTrue( hasChildren );
   }
-  
+
   @Test
   public void testHasChildrenWithIFile() throws Exception {
     IFile file = mock( IFile.class );
-    
+
     boolean hasChildren = contentProvider.hasChildren( file );
-    
+
     assertFalse( hasChildren );
   }
 
   @Test
   public void testHasChildrenWithZipFile() throws Exception {
     IFile file = createZipFile();
-    
+
     boolean hasChildren = contentProvider.hasChildren( file );
-    
+
     assertTrue( hasChildren );
   }
-  
+
   @Test
   public void testGetChildrenWithNonFilesystemZipFile() throws Exception {
     IFile zipFile = createZipFile();
-    
+
     Object[] children = contentProvider.getChildren( zipFile );
-    
+
     assertNull( children );
   }
 

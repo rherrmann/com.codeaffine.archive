@@ -121,7 +121,7 @@ public class ArchiveExtractorJobTest {
   }
 
   private void cancelProgressMonitor() {
-    when( new Boolean( progressMonitor.isCanceled() ) ).thenReturn( Boolean.TRUE );
+    when( Boolean.valueOf( progressMonitor.isCanceled() ) ).thenReturn( Boolean.TRUE );
   }
 
   private static TestArchiveExtractorJob createArchiveExtractorJob( ArchiveEntry archiveEntry,
