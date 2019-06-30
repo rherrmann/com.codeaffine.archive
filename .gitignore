@@ -1,4 +1,26 @@
-bin/
+# General
 target/
+out/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*.log
+*.class
+*~
+
+# SWTBot
 swtbot-screenshots/
+
+
+# VM crash logs
+hs_err_pid*
+
+# MacOS
+*.DS_Store
+
+# Windows
 Thumbs.db
+Desktop.ini
+
